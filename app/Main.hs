@@ -1,6 +1,7 @@
 module Main where
-import Funcs 
-import FirstADT (Client(Individual))
+    
+import FirstADT ( Client(Company, Individual, GovOrg), Person(Person), Gender (Male, Female) )
+
 
 
 
@@ -15,4 +16,8 @@ main = do
     -- print(reverse2 [1, 2, 3])
     -- print( fst (maxmin [1, 2, 3, 4, 5]))
     -- print( snd (maxmin [1, 2, 3, 4, 5]))
-    print(Individual "Jack" "Smith" True)
+    print(Individual (Person "Jack" "Smith" Male) True)
+    print(Company "Roga i kopyta" 1 (Person "Vitaliy" "zhmyshenko" Male))
+    print(Person "Olga" "Buzova" Female)
+    print(GovOrg "NASA")
+    

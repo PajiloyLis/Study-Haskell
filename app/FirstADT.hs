@@ -1,6 +1,12 @@
 module FirstADT where
 
 data Client = GovOrg String
-    | Compant String Integer String String
-    | Individual String String Bool
+    | Company String Integer Person
+    | Individual Person Bool
+    deriving Show
+
+data Person = Person String String Gender
+    deriving Show
+
+data Gender = Male | Female | Unknown
     deriving Show
