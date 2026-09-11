@@ -35,3 +35,13 @@ maxmin lst =
         where t = maxmin(tail lst)
               t_max = fst t
               t_min = snd t
+
+ackermann :: Integer -> Integer -> Integer
+ackermann m n 
+    | m == 0 = (n+1)
+    | m > 0 && n == 0 = ackermann (m-1) 1
+    | otherwise = ackermann (m-1) (ackermann m (n-1))
+
+unzipp :: [(a, a)] -> ([a], [a])
+unzipp [] = ([], [])
+unzipp (x:rest) = ((fst x) : f, (snd x) : l) where (f, l) = unzipp rest
